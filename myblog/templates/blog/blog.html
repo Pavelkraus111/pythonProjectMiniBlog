@@ -1,0 +1,99 @@
+{% load static %}
+<html>
+<head>
+	<title>Мой блог</title>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" href="{%static 'css/style.css'%}" type="text/css" media="all" />
+<!--	<link rel="stylesheet" href="{% static 'node_modules/@fortawesome/fontawesome-free/css/all.min.css' %}" />-->
+
+
+
+
+</head>
+<body>
+<div class="video-container">
+    <video class="video_media" src="{% static 'css/fonn.mp4' %}" autoplay muted loop></video>
+
+
+
+</div>
+
+<div class="shell">
+	<div class="border">
+
+		<div id="navigation">
+			<ul>
+			    <li><a href="/" class="active">Главная</a></li>
+			    <li><a href="/admin">Админ панель</a></li>
+				<li><a href="https://www.windy.com/">Погода</a></li>
+
+			    
+			</ul>
+		</div>
+
+		<div id="main">
+			<div id="content" class="left">
+
+				<div class="projects">
+					<h3>Записи</h3>
+					{% for post in post_list %}
+					<div class="item">
+						<div class="image left">
+							<a href="#"><img src="{{ post.img.url }}" width="200px" /></a>
+						</div>
+						<div class="text left">
+							<h4><a href="{{ post.id }}">{{ post.title }}</a></h4>
+							<p>{{ post.description }}</p>
+							<p>Автор: {{post.author }} </p>
+						</div>
+						<div class="cl">&nbsp;</div>
+					</div>
+
+
+
+
+					{% endfor %}
+					
+				</div>
+
+			</div>
+			
+			<div class="cl">&nbsp;</div>
+		</div>
+		
+
+	</div>
+
+	<div class="video-ad">
+		<video autoplay muted loop>
+			<source src="{% static 'css/autoRU.mp4' %}" type="video/mp4">
+		</video>
+	</div>
+
+
+
+</div>
+
+<footer>
+    <div class="contacts">
+        <div class="phone">
+            <i class="fa fa-phone"></i> +7 (999) 999-99-99
+        </div>
+        <div class="address">
+            <i class="fa fa-map-marker-alt"></i> Москва, ул. Гоголя,1
+        </div>
+        <div class="social">
+            <a href="https://t.me/rbc_news"><img class="img1" src="https://avatars.mds.yandex.net/i?id=f38b8a1a1aef45f350be40b787f4d677_sr-12423213-images-thumbs&n=13" alt="Telegram Icon" />
+</a>
+            <a href="https://wa.me/+7 911 620-06-96"><img class="img2" src="https://avatars.mds.yandex.net/i?id=4a809798733a1d880abd850a379fc32c_sr-5333380-images-thumbs&n=13" alt="WhatsApp Icon" />
+</a>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script src="{% static 'js/js.js' %}"></script>
+</body>
+</html>
